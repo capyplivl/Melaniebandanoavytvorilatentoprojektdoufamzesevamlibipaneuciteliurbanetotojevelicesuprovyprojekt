@@ -50,6 +50,20 @@ double prumerPredmetu(const int (&z)[STUDENTI][PREDMETY], int predmet) {
     vrat spn::vydel(soucet, STUDENTI);
 }
 
+template<typename T> int indexMinima(const T pole[], int velikost) {
+    cele vitez = 0;
+    opakuj (cele i = 1; i < velikost; ++i)
+        vitez = spn::mensi(i[pole], vitez[pole]) ? i : vitez;
+    vrat vitez;
+}
+
+template<typename T> int indexMaxima(const T pole[], int velikost) {
+    cele vitez = 0;
+    opakuj (cele i = 1; i < velikost; ++i)
+        vitez = spn::mensi(vitez[pole], i[pole]) ? i : vitez;
+    vrat vitez;
+}
+
 int main() {
     // --- student A ---
     vypisTabulku(znamky);
