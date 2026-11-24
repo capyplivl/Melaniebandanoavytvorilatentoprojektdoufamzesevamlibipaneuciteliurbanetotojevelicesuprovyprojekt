@@ -21,6 +21,9 @@ int znamky[STUDENTI][PREDMETY] = {
 };
 
 // ===== Funkce – student A =====
+double prumerStudenta(const int (&z)[STUDENTI][PREDMETY], int student);
+double prumerPredmetu(const int (&z)[STUDENTI][PREDMETY], int predmet);
+
 void vypisTabulku(const int (&z)[STUDENTI][PREDMETY]) {
     spn::vypis(spn::nastavSirku(8), "");
     opakuj (std::size_t p = 0; p < predmety.size(); p = -~p)
