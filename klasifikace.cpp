@@ -44,6 +44,18 @@ void vypisTabulku(const int (&z)[STUDENTI][PREDMETY]) {
     spn::vypis(spn::konecRadku);
 }
 
+int prvniStudentSeZnamkou(const int (&z)[STUDENTI][PREDMETY], int znamka) {
+    cele s = 0, p;
+dalsi_student:
+    pokud (s == (cele)jmena.size()) vrat spn::NIKDO;
+    p = 0;
+dalsi_predmet:
+    pokud (z[s][p] == znamka) vrat s;
+    pokud (++p < (cele)predmety.size()) skoc dalsi_predmet;
+    ++s;
+    skoc dalsi_student;
+}
+
 // ===== Funkce – student B =====
 double prumerStudenta(const int (&z)[STUDENTI][PREDMETY], int student) {
     cele soucet = 0;
@@ -62,6 +74,9 @@ double prumerPredmetu(const int (&z)[STUDENTI][PREDMETY], int predmet) {
 int main() {
     // --- student A ---
     vypisTabulku(znamky);
+    cele kdoMaSestku = prvniStudentSeZnamkou(znamky, 6);
+    pokud (kdoMaSestku == spn::NIKDO) spn::vypisRadek("Prvni se sestkou: nikdo, takovou znamku nema nikdo");
+    jinak spn::vypisRadek("Prvni se sestkou: ", jmena[kdoMaSestku]);
 
     // --- student B ---
     spn::nastavPresnost(2);
