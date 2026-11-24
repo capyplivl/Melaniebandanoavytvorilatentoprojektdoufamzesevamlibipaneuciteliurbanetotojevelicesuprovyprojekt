@@ -21,11 +21,25 @@ int znamky[STUDENTI][PREDMETY] = {
 };
 
 // ===== Funkce – student A =====
+void vypisTabulku(const int (&z)[STUDENTI][PREDMETY]) {
+    spn::vypis(spn::nastavSirku(8), "");
+    opakuj (std::size_t p = 0; p < predmety.size(); p = -~p)
+        spn::vypis(spn::nastavSirku(6), predmety[p]);
+    spn::vypis(spn::konecRadku);
+
+    opakuj (std::size_t s = 0; s < jmena.size(); s = -~s) {
+        spn::vypis(spn::nastavSirku(8), jmena[s]);
+        opakuj (std::size_t p = 0; p < predmety.size(); p = -~p)
+            spn::vypis(spn::nastavSirku(6), p[*(z + s)]);
+        spn::vypis(spn::konecRadku);
+    }
+}
 
 // ===== Funkce – student B =====
 
 int main() {
     // --- student A ---
+    vypisTabulku(znamky);
 
     // --- student B ---
 
