@@ -3,6 +3,7 @@
 #include <array>
 #include <string>
 #include <algorithm>   // std::sort
+#include "spn.hpp"
 
 const int STUDENTI = 6;
 const int PREDMETY = 4;
