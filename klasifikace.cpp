@@ -74,9 +74,9 @@ double prumerPredmetu(const int (&z)[STUDENTI][PREDMETY], int predmet) {
 int main() {
     // --- student A ---
     vypisTabulku(znamky);
-    cele kdoMaSestku = prvniStudentSeZnamkou(znamky, 6);
-    pokud (kdoMaSestku == spn::NIKDO) spn::vypisRadek("Prvni se sestkou: nikdo, takovou znamku nema nikdo");
-    jinak spn::vypisRadek("Prvni se sestkou: ", jmena[kdoMaSestku]);
+    cele kdoMaPetku = prvniStudentSeZnamkou(znamky, 5);
+    pokud (kdoMaPetku == spn::NIKDO) spn::vypisRadek("Prvni s petkou: nikdo, cela trida je zdrava");
+    jinak spn::vypisRadek("Prvni s petkou: ", jmena[kdoMaPetku]);
 
     // --- student B ---
     spn::nastavPresnost(2);
