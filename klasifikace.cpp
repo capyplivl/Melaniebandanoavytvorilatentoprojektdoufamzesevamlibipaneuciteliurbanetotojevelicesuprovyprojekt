@@ -108,5 +108,14 @@ int main() {
     spn::vypisRadek(spn::konecRadku, "Nejlepsi: ", jmena[indexMinima(prumery, STUDENTI)]);
     spn::vypisRadek("Nejhorsi: ", jmena[indexMaxima(prumery, STUDENTI)]);
 
+    int poradi[STUDENTI] = {0, 1, 2, 3, 4, 5};
+    std::sort(poradi, poradi + STUDENTI, [&prumery](int a, int b) {
+        vrat a[prumery] < b[prumery];
+    });
+    spn::nastavPresnost(2);
+    spn::vypisRadek(spn::konecRadku, "Poradi tridy:");
+    opakuj (cele i = 0; i < STUDENTI; i++)
+        spn::vypisRadek(-~i, ". ", jmena[i[poradi]], " (", i[poradi][prumery], ")");
+
     return 0;
 }
