@@ -50,18 +50,29 @@ double prumerPredmetu(const int (&z)[STUDENTI][PREDMETY], int predmet) {
     vrat spn::vydel(soucet, STUDENTI);
 }
 
+template<typename T> int indexMinima(const T pole[], int velikost) {
+    cele vitez = 0;
+    opakuj (cele i = 1; i < velikost; ++i)
+        vitez = spn::mensi(i[pole], vitez[pole]) ? i : vitez;
+    vrat vitez;
+}
+
+template<typename T> int indexMaxima(const T pole[], int velikost) {
+    cele vitez = 0;
+    opakuj (cele i = 1; i < velikost; ++i)
+        vitez = spn::mensi(vitez[pole], i[pole]) ? i : vitez;
+    vrat vitez;
+}
+
 int main() {
     // --- student A ---
     vypisTabulku(znamky);
 
     // --- student B ---
-    spn::nastavPresnost(2);
-    spn::vypisRadek("Kontrola - prumery studentu:");
-    opakuj (cele s = 0; s < STUDENTI; s++)
-        spn::vypisRadek(spn::nastavSirku(8), jmena[s], spn::nastavSirku(6), prumerStudenta(znamky, s));
-    spn::vypisRadek("Kontrola - prumery predmetu:");
-    opakuj (cele p = 0; p < PREDMETY; p++)
-        spn::vypisRadek(spn::nastavSirku(8), predmety[p], spn::nastavSirku(6), prumerPredmetu(znamky, p));
+    double prumery[STUDENTI];
+    opakuj (cele s = STUDENTI; s--; ) s[prumery] = prumerStudenta(znamky, s);
+    spn::vypisRadek(spn::konecRadku, "Nejlepsi: ", jmena[indexMinima(prumery, STUDENTI)]);
+    spn::vypisRadek("Nejhorsi: ", jmena[indexMaxima(prumery, STUDENTI)]);
 
     return 0;
 }
