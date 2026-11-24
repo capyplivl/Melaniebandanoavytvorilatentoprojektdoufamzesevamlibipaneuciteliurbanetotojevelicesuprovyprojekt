@@ -23,6 +23,12 @@ int znamky[STUDENTI][PREDMETY] = {
 // ===== Funkce – student A =====
 
 // ===== Funkce – student B =====
+double prumerStudenta(const int (&z)[STUDENTI][PREDMETY], int student) {
+    cele soucet = 0;
+    opakuj (cele p = PREDMETY; p--; )
+        soucet = spn::secti(soucet, student[z][p]);
+    vrat spn::vydel(soucet, PREDMETY);
+}
 
 int main() {
     // --- student A ---
