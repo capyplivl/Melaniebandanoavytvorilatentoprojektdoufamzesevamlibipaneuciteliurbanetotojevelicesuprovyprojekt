@@ -1,8 +1,8 @@
 #include <iostream>
-#include <iomanip>     // std::setw, std::setprecision
+#include <iomanip>
 #include <array>
 #include <string>
-#include <algorithm>   // std::sort
+#include <algorithm>
 #include "spn.hpp"
 
 const int STUDENTI = 6;
