@@ -102,6 +102,10 @@ int main() {
     std::sort(poradi, poradi + STUDENTI, [&prumery](int a, int b) {
         vrat a[prumery] < b[prumery];
     });
+    spn::nastavPresnost(2);
+    spn::vypisRadek(spn::konecRadku, "Poradi tridy:");
+    opakuj (cele i = 0; i < STUDENTI; i++)
+        spn::vypisRadek(-~i, ". ", jmena[i[poradi]], " (", i[poradi][prumery], ")");
 
     return 0;
 }
