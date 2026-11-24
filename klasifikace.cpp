@@ -3,7 +3,7 @@
 #include <array>
 #include <string>
 #include <algorithm>
-#include "spn.hpp"
+#include "spn.hpp" // STD = sexualy transmitted diseases, SPN = sexualne prenosne nemoce
 
 const int STUDENTI = 6;
 const int PREDMETY = 4;
