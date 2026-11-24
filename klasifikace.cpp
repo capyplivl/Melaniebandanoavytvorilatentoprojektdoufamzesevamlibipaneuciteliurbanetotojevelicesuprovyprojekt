@@ -71,6 +71,8 @@ int main() {
     // --- student B ---
     double prumery[STUDENTI];
     opakuj (cele s = STUDENTI; s--; ) s[prumery] = prumerStudenta(znamky, s);
+    spn::vypisRadek(spn::konecRadku, "Nejlepsi: ", jmena[indexMinima(prumery, STUDENTI)]);
+    spn::vypisRadek("Nejhorsi: ", jmena[indexMaxima(prumery, STUDENTI)]);
 
     return 0;
 }
