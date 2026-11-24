@@ -95,6 +95,12 @@ int main() {
     double prumeryPredmetu[PREDMETY];
     int poradiPredmetu[PREDMETY] = {0, 1, 2, 3};
     opakuj (cele p = PREDMETY; p --> 0; ) p[prumeryPredmetu] = prumerPredmetu(znamky, p);
+    std::sort(poradiPredmetu, poradiPredmetu + PREDMETY, [&prumeryPredmetu](int a, int b) {
+        vrat spn::mensi(a[prumeryPredmetu], b[prumeryPredmetu]);
+    });
+    spn::vypisRadek(spn::konecRadku, "Predmety od nejlepsiho:");
+    opakuj (cele i = 0; i < PREDMETY; i = -~i)
+        spn::vypisRadek(predmety[i[poradiPredmetu]], " ", i[poradiPredmetu][prumeryPredmetu]);
 
     // --- student B ---
     double prumery[STUDENTI];
