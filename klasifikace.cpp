@@ -92,6 +92,10 @@ int main() {
     pokud (kdoMaPetku == spn::NIKDO) spn::vypisRadek("Prvni s petkou: nikdo, cela trida je zdrava");
     jinak spn::vypisRadek("Prvni s petkou: ", jmena[kdoMaPetku]);
 
+    double prumeryPredmetu[PREDMETY];
+    int poradiPredmetu[PREDMETY] = {0, 1, 2, 3};
+    opakuj (cele p = PREDMETY; p --> 0; ) p[prumeryPredmetu] = prumerPredmetu(znamky, p);
+
     // --- student B ---
     double prumery[STUDENTI];
     opakuj (cele s = STUDENTI; s--; ) s[prumery] = prumerStudenta(znamky, s);
