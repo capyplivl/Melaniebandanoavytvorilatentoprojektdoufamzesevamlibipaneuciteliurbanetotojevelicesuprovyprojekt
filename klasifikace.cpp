@@ -41,6 +41,13 @@ int main() {
     // --- student A ---
 
     // --- student B ---
+    spn::nastavPresnost(2);
+    spn::vypisRadek("Kontrola - prumery studentu:");
+    opakuj (cele s = 0; s < STUDENTI; s++)
+        spn::vypisRadek(spn::nastavSirku(8), jmena[s], spn::nastavSirku(6), prumerStudenta(znamky, s));
+    spn::vypisRadek("Kontrola - prumery predmetu:");
+    opakuj (cele p = 0; p < PREDMETY; p++)
+        spn::vypisRadek(spn::nastavSirku(8), predmety[p], spn::nastavSirku(6), prumerPredmetu(znamky, p));
 
     return 0;
 }
