@@ -55,6 +55,8 @@ int main() {
     vypisTabulku(znamky);
 
     // --- student B ---
+    double prumery[STUDENTI];
+    opakuj (cele s = STUDENTI; s--; ) s[prumery] = prumerStudenta(znamky, s);
 
     return 0;
 }
