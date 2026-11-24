@@ -30,6 +30,13 @@ double prumerStudenta(const int (&z)[STUDENTI][PREDMETY], int student) {
     vrat spn::vydel(soucet, PREDMETY);
 }
 
+double prumerPredmetu(const int (&z)[STUDENTI][PREDMETY], int predmet) {
+    cele soucet = 0, s = STUDENTI;
+    dokud (s --> 0)
+        soucet = spn::secti(soucet, predmet[s[z]]);
+    vrat spn::vydel(soucet, STUDENTI);
+}
+
 int main() {
     // --- student A ---
 
