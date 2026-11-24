@@ -36,12 +36,32 @@ void vypisTabulku(const int (&z)[STUDENTI][PREDMETY]) {
 }
 
 // ===== Funkce – student B =====
+double prumerStudenta(const int (&z)[STUDENTI][PREDMETY], int student) {
+    cele soucet = 0;
+    opakuj (cele p = PREDMETY; p--; )
+        soucet = spn::secti(soucet, student[z][p]);
+    vrat spn::vydel(soucet, PREDMETY);
+}
+
+double prumerPredmetu(const int (&z)[STUDENTI][PREDMETY], int predmet) {
+    cele soucet = 0, s = STUDENTI;
+    dokud (s --> 0)
+        soucet = spn::secti(soucet, predmet[s[z]]);
+    vrat spn::vydel(soucet, STUDENTI);
+}
 
 int main() {
     // --- student A ---
     vypisTabulku(znamky);
 
     // --- student B ---
+    spn::nastavPresnost(2);
+    spn::vypisRadek("Kontrola - prumery studentu:");
+    opakuj (cele s = 0; s < STUDENTI; s++)
+        spn::vypisRadek(spn::nastavSirku(8), jmena[s], spn::nastavSirku(6), prumerStudenta(znamky, s));
+    spn::vypisRadek("Kontrola - prumery predmetu:");
+    opakuj (cele p = 0; p < PREDMETY; p++)
+        spn::vypisRadek(spn::nastavSirku(8), predmety[p], spn::nastavSirku(6), prumerPredmetu(znamky, p));
 
     return 0;
 }
