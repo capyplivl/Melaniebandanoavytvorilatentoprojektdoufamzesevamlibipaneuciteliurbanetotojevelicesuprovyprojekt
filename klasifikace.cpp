@@ -26,6 +26,13 @@ void vypisTabulku(const int (&z)[STUDENTI][PREDMETY]) {
     opakuj (std::size_t p = 0; p < predmety.size(); p = -~p)
         spn::vypis(spn::nastavSirku(6), predmety[p]);
     spn::vypis(spn::konecRadku);
+
+    opakuj (std::size_t s = 0; s < jmena.size(); s = -~s) {
+        spn::vypis(spn::nastavSirku(8), jmena[s]);
+        opakuj (std::size_t p = 0; p < predmety.size(); p = -~p)
+            spn::vypis(spn::nastavSirku(6), p[*(z + s)]);
+        spn::vypis(spn::konecRadku);
+    }
 }
 
 // ===== Funkce – student B =====
