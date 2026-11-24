@@ -25,17 +25,23 @@ double prumerStudenta(const int (&z)[STUDENTI][PREDMETY], int student);
 double prumerPredmetu(const int (&z)[STUDENTI][PREDMETY], int predmet);
 
 void vypisTabulku(const int (&z)[STUDENTI][PREDMETY]) {
+    spn::nastavPresnost(2);
     spn::vypis(spn::nastavSirku(8), "");
     opakuj (std::size_t p = 0; p < predmety.size(); p = -~p)
         spn::vypis(spn::nastavSirku(6), predmety[p]);
-    spn::vypis(spn::konecRadku);
+    spn::vypisRadek(spn::nastavSirku(8), "prumer");
 
     opakuj (std::size_t s = 0; s < jmena.size(); s = -~s) {
         spn::vypis(spn::nastavSirku(8), jmena[s]);
         opakuj (std::size_t p = 0; p < predmety.size(); p = -~p)
             spn::vypis(spn::nastavSirku(6), p[*(z + s)]);
-        spn::vypis(spn::konecRadku);
+        spn::vypisRadek(spn::nastavSirku(8), prumerStudenta(z, (cele)s));
     }
+
+    spn::vypis(spn::nastavSirku(8), "prumer");
+    opakuj (std::size_t p = 0; p < predmety.size(); p = -~p)
+        spn::vypis(spn::nastavSirku(6), prumerPredmetu(z, (cele)p));
+    spn::vypis(spn::konecRadku);
 }
 
 // ===== Funkce – student B =====
